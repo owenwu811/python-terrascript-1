@@ -59,13 +59,8 @@ if __name__ == '__main__':
 
     # prompt user to select module(s) to build
     build_modules = prompt_modules(find_modules(MODULE_DIRS))
-    if build_modules is None:
-      print("User abort exiting...")
-      exit (1)
-
-    # prompt user to choose terraform action
     tfaction = prompt_tfaction(TF_ACTIONS)
-    if tfaction is None:
+    if build_modules is None or tfaction is None:
       print("User abort exiting...")
       exit (1)
 
